@@ -10,11 +10,12 @@ class CustomText(models.Model):
     title = models.CharField(max_length=150,)
     test = models.ForeignKey(
         "users.User",
-        on_delete=models.CASCADE,
         null=True,
         blank=True,
+        on_delete=models.CASCADE,
         related_name="customtext_test",
     )
+    user = models.BigIntegerField(null=True, blank=True,)
 
     def __str__(self):
         return self.title
